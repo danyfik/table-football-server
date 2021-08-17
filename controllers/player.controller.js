@@ -3,7 +3,7 @@ const { db } = DatabaseConnection;
 import Utils from "../utils/utils.js";
 import { getPlayerQuery, getPlayersQuery } from '../queries/player.queries.js'
 
-export async function getPlayer(req, res, next) {
+export async function getPlayer(req, res) {
     console.log('getPlayer');
     const playerId = req.params.playerId;
     if (!Utils.isNumber(playerId)) {
@@ -11,12 +11,17 @@ export async function getPlayer(req, res, next) {
         return;
     }
     const result = Utils.castMysqlRecordsToArray(await db.pool.query(getPlayerQuery(playerId)));
-    console.log(result);
     res.json(result);
 }
-export async function getPlayers(req, res, next) {
-    const players = Utils.castMysqlRecordsToArray(await db.pool.query(getPlayersQuery()));
-    res.json({
-        players
-    });
+export async function getPlayers(req, res) {
+    console.log('ici')
+    try {
+        const players = Utils.castMysqlRecordsToArray(await db.pool.query(getPlayersQuery()));
+        res.status(200).json({
+            players
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(404).json({ message: error.message })
+    }
 }

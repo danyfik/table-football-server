@@ -2,7 +2,7 @@ const config = {
     isDevModeEnabled: true,
     server: {
         hostName: "localhost",
-        port: 3001
+        port: 5000
     },
     database: {
         host: "localhost",

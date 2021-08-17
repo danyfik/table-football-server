@@ -1,4 +1,5 @@
-import { createPool } from 'mysql';
+// import { createPool } from 'mysql';
+import { createPool } from 'mysql2/promise';
 import config from "./config/config.js";
 
 class DatabaseConnection {
@@ -20,3 +21,4 @@ class DatabaseConnection {
 export default {
     db: new DatabaseConnection()
 };
+

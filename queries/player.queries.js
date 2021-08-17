@@ -3,5 +3,5 @@ export function getPlayerQuery(playerId) {
 }
 
 export function getPlayersQuery() {
-    return 'SELECT * FROM players';
+    return `SELECT * FROM players`;
 }
