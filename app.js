@@ -8,6 +8,7 @@ const { db } = DatabaseConnection;
 import IndexRoutes from './routes/index.route.js'
 import PlayerRoutes from './routes/player.route.js'
 import TeamRoutes from './routes/team.route.js'
+import GameRoutes from './routes/game.route.js'
 
 export class App {
     constructor(port) {
@@ -38,6 +39,7 @@ export class App {
         this.app.use(IndexRoutes);
         this.app.use('/players', PlayerRoutes);
         this.app.use('/teams', TeamRoutes);
+        this.app.use('/games', GameRoutes);
     }
 
     async listen() {
