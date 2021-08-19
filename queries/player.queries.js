@@ -6,10 +6,7 @@ export function getPlayersQuery() {
     return `SELECT * FROM players`;
 }
 
-export function addPlayerQuery(truc) {
-    console.log('truc', truc)
-    console.log('name', truc.n)
-    console.log('country', truc.c)
+export function addPlayerQuery(player) {
     return `
     INSERT INTO players
       (
@@ -18,8 +15,8 @@ export function addPlayerQuery(truc) {
       )
     VALUES
       (
-        '${truc.n}',
-        '${truc.c}'
+        '${player.name}',
+        '${player.country}'
       )
   `
 }

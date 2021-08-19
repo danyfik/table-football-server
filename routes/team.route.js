@@ -1,11 +1,11 @@
 import { Router } from 'express'
-import { getTeam, getTeams } from '../controllers/team.controller.js'
+import { getTeam, getTeams, addTeam } from '../controllers/team.controller.js'
 
 const router = Router();
 
 router.route('/')
     .get(getTeams)
-//     .post(createTeam);
+    .post(addTeam)
 
 router.route('/:teamId')
     .get(getTeam)

@@ -10,3 +10,20 @@ export function getTeamsQuery() {
                      LEFT JOIN players as first_player on teams.player1Id = first_player.id
                      LEFT JOIN players as second_player on teams.player2Id = second_player.id`;
 }
+
+export function addTeamQuery(team) {
+    return `
+    INSERT INTO teams
+      (
+        name,
+        player1Id,
+        player2Id
+      )
+    VALUES
+      (
+        '${team.name}',
+        '${team.player1}',
+        '${team.player2}'
+      )
+  `
+}

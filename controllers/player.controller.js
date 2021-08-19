@@ -14,7 +14,6 @@ export async function getPlayer(req, res) {
     res.json(result);
 }
 export async function getPlayers(req, res) {
-    console.log('ici')
     try {
         const players = Utils.castMysqlRecordsToArray(await db.pool.query(getPlayersQuery()));
         res.status(200).json({
@@ -26,7 +25,6 @@ export async function getPlayers(req, res) {
     }
 }
 export async function addPlayer(req, res) {
-    console.log('ici2')
     const newPlayer = req.body;
     console.log(newPlayer);
 

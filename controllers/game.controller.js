@@ -14,7 +14,6 @@ export async function getGame(req, res) {
     res.json(result);
 }
 export async function getGames(req, res) {
-    console.log('ici')
     try {
         const games = Utils.castMysqlRecordsToArray(await db.pool.query(getGamesQuery()));
         res.status(200).json({
