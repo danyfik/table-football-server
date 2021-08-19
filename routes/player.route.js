@@ -1,10 +1,11 @@
 import { Router } from 'express'
-import { getPlayer, getPlayers } from '../controllers/player.controller.js'
+import {addPlayer, getPlayer, getPlayers} from '../controllers/player.controller.js'
 
 const router = Router();
 
 router.route('/')
     .get(getPlayers)
+    .post(addPlayer)
 //     .post(createPlayer);
 
 router.route('/:playerId')
