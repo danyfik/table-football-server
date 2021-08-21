@@ -4,7 +4,6 @@ import Utils from "../utils/utils.js";
 import { getTeamQuery, getTeamsQuery, addTeamQuery } from '../queries/team.queries.js'
 
 export async function getTeam(req, res) {
-    console.log('getTeam');
     const teamId = req.params.teamId;
     if (!Utils.isNumber(teamId)) {
         console.log('Id non valable. Ce n\'est pas un nombre')
@@ -26,7 +25,6 @@ export async function getTeams(req, res) {
 }
 export async function addTeam(req, res) {
     const newTeam = req.body;
-    console.log(newTeam);
 
     try {
         const team = Utils.castMysqlRecordsToArray(await db.pool.query(addTeamQuery(newTeam)));

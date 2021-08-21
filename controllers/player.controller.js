@@ -4,7 +4,6 @@ import Utils from "../utils/utils.js";
 import {addPlayerQuery, getPlayerQuery, getPlayersQuery} from '../queries/player.queries.js'
 
 export async function getPlayer(req, res) {
-    console.log('getPlayer');
     const playerId = req.params.playerId;
     if (!Utils.isNumber(playerId)) {
         console.log('Id non valable. Ce n\'est pas un nombre')
