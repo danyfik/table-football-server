@@ -29,9 +29,9 @@ export async function addTeam(req, res) {
     console.log(newTeam);
 
     try {
-        const player = Utils.castMysqlRecordsToArray(await db.pool.query(addTeamQuery(newTeam)));
+        const team = Utils.castMysqlRecordsToArray(await db.pool.query(addTeamQuery(newTeam)));
         res.status(200).json({
-            newTeam
+            team
         })
     } catch (error) {
         console.log(error)

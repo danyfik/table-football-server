@@ -3,7 +3,8 @@ export function getTeamQuery(teamId) {
 }
 
 export function getTeamsQuery() {
-    return `SELECT teams.name,
+    return `SELECT teams.id,
+                    teams.name,
                    first_player.name  as player1,
                    second_player.name as player2
             FROM teams
