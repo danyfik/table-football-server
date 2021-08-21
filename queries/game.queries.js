@@ -6,6 +6,8 @@ export function getGamesQuery() {
     return `SELECT games.id,
                    first_team.name  as team1,
                    second_team.name as team2,
+                   first_team.id  as team1Id,
+                   second_team.id as team2Id,
                    games.team1Score,
                    games.team2Score
             FROM games
