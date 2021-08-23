@@ -3,7 +3,15 @@ export function getPlayerQuery(playerId) {
 }
 
 export function getPlayersQuery() {
-    return `SELECT * FROM players`;
+    return `
+        SELECT
+            players.id, 
+            players.name, 
+            players.country, 
+            team.id AS teamId, 
+            team.name AS teamName
+        FROM players
+        LEFT JOIN teams AS team ON team.player1Id = players.id OR team.player2Id = players.id;`;
 }
 
 export function addPlayerQuery(player) {
