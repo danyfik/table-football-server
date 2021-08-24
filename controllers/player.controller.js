@@ -25,7 +25,6 @@ export async function getPlayers(req, res) {
 }
 export async function addPlayer(req, res) {
     const newPlayer = req.body;
-    console.log(newPlayer);
 
     try {
         const player = Utils.castMysqlRecordsToArray(await db.pool.query(addPlayerQuery(newPlayer)));
