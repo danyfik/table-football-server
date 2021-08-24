@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getGame, getGames, addGame } from '../controllers/game.controller.js'
+import { getGames, addGame, getPlayerGames } from '../controllers/game.controller.js'
 
 const router = Router();
 
@@ -8,8 +8,7 @@ router.route('/')
     .post(addGame)
 //     .post(createGame);
 
-router.route('/:gameId')
-    .get(getGame)
-//     .delete(deleteGame)
+router.route('/:playerId')
+    .get(getPlayerGames)
 
 export default router;
